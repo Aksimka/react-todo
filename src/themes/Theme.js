@@ -2,12 +2,13 @@ import themesCollection from "./themesCollection";
 
 export default class Theme {
 
-  defaultTheme = 'defaultLight'
+  defaultTheme = 'defaultLight';
   attachEl = null;
   currentThemeName = null;
 
   constructor(payload) {
     const { attachEl, themeName } = payload;
+    // console.log(payload, 'attachEl payload');
     this.attachEl = attachEl;
     this.currentThemeName = themeName;
     this._setColors();
@@ -15,9 +16,10 @@ export default class Theme {
 
   _setColors() {
     const theme = themesCollection[this.currentThemeName || this.defaultTheme];
-    console.log(this.attachEl, 'this.attachEl');
-    Object.keys(theme).forEach(key => {
-      this.attachEl.setAttribute(`--color-${key}`, theme[key])
+
+    Object.keys(theme.colors).forEach(key => {
+      // console.log(this.attachEl, 'this.attachEl');
+      this.attachEl.style.setProperty(`--color-${key}`, theme.colors[key])
     })
   }
 

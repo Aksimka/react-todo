@@ -1,0 +1,6 @@
+.touchable {
+  transition: .1s;
+  &:hover {
+    transform: scale(.95);
+  }
+}
