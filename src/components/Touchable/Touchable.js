@@ -1,3 +1,5 @@
+import React from 'react';
+
 import './Touchable.scss'
 
 export default function Touchable (props) {
