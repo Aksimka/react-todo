@@ -8,7 +8,6 @@ export default class Theme {
 
   constructor(payload) {
     const { attachEl, themeName } = payload;
-    // console.log(payload, 'attachEl payload');
     this.attachEl = attachEl;
     this.currentThemeName = themeName;
     this._setColors();
@@ -16,9 +15,7 @@ export default class Theme {
 
   _setColors() {
     const theme = themesCollection[this.currentThemeName || this.defaultTheme];
-
     Object.keys(theme.colors).forEach(key => {
-      // console.log(this.attachEl, 'this.attachEl');
       this.attachEl.style.setProperty(`--color-${key}`, theme.colors[key])
     })
   }

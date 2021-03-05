@@ -1,0 +1,10 @@
+.task-card {
+  padding: 16px;
+  .task-card-top {
+    display: flex;
+    justify-content: space-between;
+    .task-card-top-heading__title {
+      font-weight: bold;
+    }
+  }
+}
