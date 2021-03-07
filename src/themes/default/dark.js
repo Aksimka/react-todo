@@ -1,5 +1,14 @@
 const dark = {
   colors: {
+    today: '#489696',
+    today_secondary: '#E0F4F4',
+    today_text: '#A3C2C2',
+    tomorrow: '#FF493A',
+    tomorrow_secondary: '#FFF3F1',
+    tomorrow_text: '#AB8685',
+    older: '#50467E',
+    older_secondary: '#F6F5FB',
+    older_text: '#7C759F',
     primary: '#eac918',
     unfocused: '#fffbc0',
     text: '#ffffff',
