@@ -35,7 +35,7 @@ export default class App extends React.Component {
     const { title, time } = this.props;
     return (
       <Touchable>
-        <div className="task-card today">
+        <div className={['task-card', this.state.textDay].join(' ')}>
           <div className="task-card-top">
             <div className="task-card-top-heading">
               <div className="task-card-top-heading__title">{ title }</div>

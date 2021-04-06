@@ -32,3 +32,31 @@
     color: var(--color-today_text);
   }
 }
+.task-card.tomorrow {
+  background: var(--color-tomorrow_secondary);
+  .task-card-top-heading {
+    .task-card-top-heading__title {
+      color: var(--color-tomorrow);
+    }
+    .task-card-top-heading__time {
+      color: var(--color-tomorrow_text);
+    }
+  }
+  .task-card-top-day {
+    color: var(--color-tomorrow_text);
+  }
+}
+.task-card.older {
+  background: var(--color-older_secondary);
+  .task-card-top-heading {
+    .task-card-top-heading__title {
+      color: var(--color-older);
+    }
+    .task-card-top-heading__time {
+      color: var(--color-older_text);
+    }
+  }
+  .task-card-top-day {
+    color: var(--color-older_text);
+  }
+}
