@@ -4,6 +4,9 @@
   "private": true,
   "dependencies": {
     "@babel/core": "7.12.3",
+    "@mozaikjs/core": "^0.5.0",
+    "@mozaikjs/logger": "^0.0.8",
+    "@mozaikjs/react": "^0.0.6",
     "@pmmmwh/react-refresh-webpack-plugin": "0.4.3",
     "@svgr/webpack": "5.5.0",
     "@testing-library/jest-dom": "^5.11.4",

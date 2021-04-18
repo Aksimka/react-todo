@@ -3,6 +3,7 @@ import dayjs from "dayjs";
 
 import './Task.scss';
 import Touchable from "../../Touchable/Touchable";
+import Button from "../../buttons/Button/Button";
 
 const DAY_MILLISECONDS = 86400000;
 
@@ -42,6 +43,13 @@ export default class App extends React.Component {
               <div className="task-card-top-heading__time">{ time }</div>
             </div>
             <div className="task-card-top-day">{ this.state.textDay }</div>
+          </div>
+          <div className="task-card-footer">
+            <div className="task-card-footer-actions">
+              <div className="task-card-footer-action">
+                <Button color={`--color-${this.state.textDay}`} children="Кнопка" click={this.props.buttonClick} />
+              </div>
+            </div>
           </div>
         </div>
       </Touchable>

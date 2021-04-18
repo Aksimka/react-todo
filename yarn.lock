@@ -1403,6 +1403,36 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
+"@mozaikjs/core@^0.2.4":
+  version "0.2.9"
+  resolved "https://registry.yarnpkg.com/@mozaikjs/core/-/core-0.2.9.tgz#56aee38d1de661fc7b16676f1676fd11b00fcbb5"
+  integrity sha512-YzgRYlwnygkWGZf5uYSa/TkSX4xvg/QNiv5gCKEzOfAsA5PuFtJ1KM4FpTMIag3RBVrtAaAPhA49E0sjabVsXg==
+
+"@mozaikjs/core@^0.4.0":
+  version "0.4.9"
+  resolved "https://registry.yarnpkg.com/@mozaikjs/core/-/core-0.4.9.tgz#71f8cc9176d469f4875878fda8ae928715c891c4"
+  integrity sha512-NtkOSHCYLeMxu7OeORuGKFrQfq1CxwpEUcGdgpgJcDA1aWuzxTdmzPb7OWUU0MFVCNaK8PG0Uwk2jDbA5rjcMw==
+
+"@mozaikjs/core@^0.5.0":
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/@mozaikjs/core/-/core-0.5.0.tgz#f80746ba39fb6fdae4cc3d3660342e6ba1629856"
+  integrity sha512-JxzU83ZVsir8VLVBPdPkQQ9/vkNS+AY6hYLrzNhCuONtHDW16OY4WJxqWjLjI4oqO5vf8MEPGowO110v3WKAMg==
+
+"@mozaikjs/logger@^0.0.8":
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/@mozaikjs/logger/-/logger-0.0.8.tgz#7b5547d2364b83fe3535bd005da760d3c0e6711c"
+  integrity sha512-cxMV8axitIoOirTa0fUkeMEbmRtSsVYSMGPegBKFpkd4zgQoQvUjHmmxbbj93/t89HufuEBwYdR10JU3dHlmaQ==
+  dependencies:
+    "@mozaikjs/core" "^0.2.4"
+
+"@mozaikjs/react@^0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@mozaikjs/react/-/react-0.0.6.tgz#34fbb0fde6842d4e6d80e9de24e72fc59e7daf51"
+  integrity sha512-9ur0DHno+/2M9qj2OkLR8TeyJP5YCLc1PjxRlHpJOaQFOYGukqntII7kVTV5RR7S/eeTZ95WklL/2lz/WWlkYw==
+  dependencies:
+    "@mozaikjs/core" "^0.4.0"
+    "@types/react" "^17.0.3"
+
 "@nodelib/fs.scandir@2.1.4":
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/@nodelib/fs.scandir/-/fs.scandir-2.1.4.tgz#d4b3549a5db5de2683e0c1071ab4f140904bbf69"
@@ -1811,7 +1841,7 @@
     hoist-non-react-statics "^3.3.0"
     redux "^4.0.0"
 
-"@types/react@*":
+"@types/react@*", "@types/react@^17.0.3":
   version "17.0.3"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.3.tgz#ba6e215368501ac3826951eef2904574c262cc79"
   integrity sha512-wYOUxIgs2HZZ0ACNiIayItyluADNbONl7kt8lkLjVK8IitMH5QMyAh75Fwhmo37r1m7L2JaFj03sIfxBVDvRAg==

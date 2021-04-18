@@ -3,59 +3,49 @@ import React from 'react';
 import './Main.scss'
 import AddTask from "../../components/cards/AddTask/AddTask";
 import Task from "../../components/cards/Task/Task";
-import {addTodoItem} from "../../store/todoReducer/actions";
-import { connect } from "react-redux";
 
-class Main extends React.Component{
+import { useStore } from "@mozaikjs/react";
 
-  constructor(props) {
-    super(props);
-  }
 
-  addTodoItem = e => {
+export default function (props) {
+
+  const store = useStore()
+
+  console.log(store, 'store');
+
+  const addTodoItem = () => {
     const newItem = {
-      id: 3,
-      title: "Design Meeting2",
-      date: new Date().toISOString(),
+      id: store.todoList.length + 1,
+      title: "Design Meeting 3",
+      date: new Date(),
       time: "10:00 - 11:30",
     }
-    this.props.addTodoItem(newItem)
+    store.addTodoItem(newItem)
+  }
+  const deleteTodoItem = (id) => {
+    store.deleteTodoItem(store.todoList.findIndex(i => i.id === id))
   }
 
-  render() {
-
-    const taskList = this.props.todoList.map(task =>
-      (
-        <div className="main-task-wrapper" key={task.id}>
-          <Task title={task.title} date={task.date} time={task.time} />
-        </div>
-      )
-    )
-
-    return (
-      <div className="main">
-        <div className="add-task-wrapper" onClick={this.addTodoItem}>
-          <AddTask />
-        </div>
-
-        <div className="main-tasks-list">
-          {
-            taskList
-          }
-        </div>
+  const taskList = store.todoList.map((task, index) =>
+    (
+      <div className="main-task-wrapper" key={task.id}>
+        <Task title={task.title} date={task.date} time={task.time} buttonClick={() => deleteTodoItem(task.id)} />
       </div>
-    );
-  }
-}
+    )
+  )
 
-const mapStateToProps = state => {
-  return {
-    todoList: state.todo.todoList
-  }
-}
+  return (
+    <div className="main">
+      <div className="add-task-wrapper" onClick={addTodoItem}>
+        <AddTask />
+      </div>
 
-const mapDispatchToProps = {
-  addTodoItem
-}
+      <div className="main-tasks-list">
+        {
+          taskList
+        }
+      </div>
+    </div>
+  )
 
-export default connect(mapStateToProps, mapDispatchToProps)(Main)
+}
