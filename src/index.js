@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {BrowserRouter as Router} from "react-router-dom";
 
 import { StoreProvider } from '@mozaikjs/react'
 
@@ -10,7 +11,9 @@ import store from './store/index'
 
 ReactDOM.render(
   <StoreProvider store={store}>
-    <App />
+    <Router>
+      <App />
+    </Router>
   </StoreProvider>,
   document.getElementById('root')
 );
