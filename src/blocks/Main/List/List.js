@@ -13,17 +13,6 @@ export default function List (props) {
 
   const store = useStore()
 
-  console.log(store, 'store');
-
-  const addTodoItem = () => {
-    const newItem = {
-      id: store.todoList.length + 1,
-      title: "Design Meeting 3",
-      date: new Date(),
-      time: "10:00 - 11:30",
-    }
-    store.addTodoItem(newItem)
-  }
   const deleteTodoItem = (id, e) => {
     e.preventDefault()
     store.deleteTodoItem(store.todoList.findIndex(i => i.id === id))
