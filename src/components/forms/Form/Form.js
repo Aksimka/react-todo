@@ -1,4 +1,4 @@
-
+import "./Form.scss"
 
 export default function Form (props) {
 

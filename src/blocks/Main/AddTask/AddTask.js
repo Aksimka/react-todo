@@ -1,15 +1,18 @@
 import { useState } from 'react';
+import "./AddTask.scss"
 
 import Form from "../../../components/forms/Form/Form";
 import { useStore } from "@mozaikjs/react";
-import Input from "../../../components/forms/Input/Input";
+import UiInput from "../../../components/forms/UiInput/UiInput";
+import Title from "../../../components/Typography/Title/Title";
+import Div from "../../../components/Div/Div";
 
 
 export default function AddTask () {
 
   const [taskTitle, setTaskTitle] = useState('')
 
-  const store = useStore(0)
+  const store = useStore()
 
   const addNewTask = (e) => {
     const newItem = {
@@ -23,10 +26,17 @@ export default function AddTask () {
   
   return (
     <div className="add-task">
-      <div className="add-task__title">Add new task: </div>
-      <Form onSubmit={ e => addNewTask(e) }>
-        <Input type="text" value={taskTitle} onChange={ e => setTaskTitle(e.target.value) } ></Input>
-      </Form>
+      <Title level={2} className="add-task__title" bold>Add new task: </Title>
+      <Div>
+        <Form onSubmit={ e => addNewTask(e) }>
+          <UiInput
+            type="text"
+            value={taskTitle}
+            onChange={ e => setTaskTitle(e.target.value) }
+            label="Заголовок:"
+          />
+        </Form>
+      </Div>
     </div>
   )
 }
