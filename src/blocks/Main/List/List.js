@@ -15,10 +15,10 @@ export default function List (props) {
 
   const deleteTodoItem = (id, e) => {
     e.preventDefault()
-    store.deleteTodoItem(store.todoList.findIndex(i => i.id === id))
+    store.todo.deleteTodoItem(store.todo.todoList.findIndex(i => i.id === id))
   }
 
-  const taskList = store.todoList.map((task, index) =>
+  const taskList = store.todo.todoList.map((task, index) =>
     (
       <div className="main-task-wrapper" key={task.id}>
         <Link to={`/task/${task.id}`}>

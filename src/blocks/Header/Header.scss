@@ -4,7 +4,15 @@
   color: var(--color-text_reversed);
   display: flex;
   justify-content: center;
+  position: relative;
   .header-logo {
     font-size: 32px;
+  }
+  .header-back-button {
+    position: absolute;
+    left: 18px;
+    top: 16px;
+    display: flex;
+    align-items: center;
   }
 }
