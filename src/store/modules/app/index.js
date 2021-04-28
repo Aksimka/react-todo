@@ -1,15 +1,17 @@
 import { types } from '@mozaikjs/core'
 
-const appModel = types.model({
-  isDisplayedBackButton: types.boolean
-})
+export const initialAppModel = {
+  isDisplayedBackButton: false,
+}
+
+export const appModel = types
+  .model({
+    isDisplayedBackButton: types.boolean,
+  })
   .actions({
     setIsDisplayedBackButton({ dispatch, state }, value) {
       dispatch({
-        isDisplayedBackButton: value
+        isDisplayedBackButton: value,
       })
     },
   })
-
-
-export default appModel

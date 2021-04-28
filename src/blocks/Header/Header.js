@@ -1,7 +1,7 @@
-import { React, useState, useEffect } from 'react';
+import { React, useState, useEffect } from 'react'
 import './Header.scss'
-import IconChevronLeft from "../../components/icons/IconChevronLeft";
-import { useLocation, Link } from 'react-router-dom';
+import IconChevronLeft from '../../components/icons/IconChevronLeft'
+import { useLocation, Link } from 'react-router-dom'
 
 const Header = (props) => {
   const location = useLocation()
@@ -15,22 +15,23 @@ const Header = (props) => {
     }
   })
 
-  const backButton = () => {
-    return isDisplayedBackButton && (
-      <Link to="/">
-        <IconChevronLeft width={12} height={22} weight={3} color="var(--color-text_reversed)" />
-      </Link>
-    )
-  }
-
   return (
     <div className="header">
       <span className="header-back-button">
-        { backButton() }
+        {isDisplayedBackButton && (
+          <Link to="/">
+            <IconChevronLeft
+              width={12}
+              height={22}
+              weight={3}
+              color="var(--color-text_reversed)"
+            />
+          </Link>
+        )}
       </span>
       <h1 className="header-logo">.todo</h1>
     </div>
   )
-};
+}
 
-export default Header;
+export default Header
