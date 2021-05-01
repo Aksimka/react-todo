@@ -1,15 +1,21 @@
 import './Button.scss'
 
 export default function Button(props) {
-  const children = props.children || '';
-  const color = props.color || 'var(--color-white_half)';
-  console.log(color, 'color');
+  const {
+    children = '',
+    color = 'var(--color-white_half)',
+    dark = false,
+    onClick,
+  } = props
   const styles = {
-    'backgroundColor': color,
+    backgroundColor: color,
+    color: dark ? 'var(--color-light)' : 'var(--color-text)',
   }
   return (
-    <button className="button" style={styles} onClick={props.click}>
-      { children && children }
-    </button>
+    <div className="button-wrapper">
+      <button className="button" style={styles} onClick={onClick}>
+        {children && children}
+      </button>
+    </div>
   )
 }

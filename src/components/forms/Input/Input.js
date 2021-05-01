@@ -1,20 +1,19 @@
-import "./Input.scss"
+import './Input.scss'
 
-export default function Input (props) {
-
+export default function Input(props) {
   const { nativeEvent } = props
 
   const handleChange = (e) => {
     if (nativeEvent) {
-      return props.onChange(e.target.value)
-    } else {
       return props.onChange(e)
+    } else {
+      return props.onChange(e.target.value)
     }
   }
 
   return (
     <div className="input-wrapper">
-      <input className="input" { ...props } onChange={ e => handleChange(e) } />
+      <input {...props} onChange={(e) => handleChange(e)} />
     </div>
   )
 }

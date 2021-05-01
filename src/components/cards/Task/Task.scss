@@ -17,6 +17,27 @@
       font-size: 13px;
     }
   }
+  .task-card-footer {
+    display: flex;
+    margin-top: 8px;
+    .task-card-footer__description {
+      flex: 1;
+      color: var(--color-older_text);
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      margin-top: 6px;
+      margin-right: 8px;
+    }
+    .task-card-footer-actions {
+      flex: 0;
+      display: flex;
+      justify-content: flex-end;
+      .task-card-footer__action {
+
+      }
+    }
+  }
 }
 .task-card.today {
   background: var(--color-today_secondary);
