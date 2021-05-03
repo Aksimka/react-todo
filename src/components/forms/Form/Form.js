@@ -1,31 +1,29 @@
-import "./Form.scss"
+import React, { forwardRef } from 'react'
+import './Form.scss'
 
-export default function Form (props) {
-
-  const onSubmit = (e) => {
-    props.onSubmit(e)
+export default function Form(props) {
+  const handleSubmit = (e) => {
+    onSubmit(e)
   }
 
-  const childrenAsArray = (props.children && props.children.length) && props.children
-  const childrenAsOne = !props.children.length && props.children
+  const { children, onSubmit } = props
 
-  console.log(props.children, 'props.children');
+  const childrenAsArray = children && children.length && children
+  const childrenAsOne = !children.length && children
 
   return (
-    <form className="form" onSubmit={ e => onSubmit(e) }>
-      {
-        childrenAsArray ?
-          childrenAsArray.map((child, index) => {
-            return (
-              <div className="form-cell" key={index}>
-                { child }
-              </div>
-            )
-          }) :
-          <div className="form-cell">
-            { childrenAsOne }
-          </div>
-      }
+    <form className="form" onSubmit={(e) => handleSubmit(e)}>
+      {childrenAsArray ? (
+        childrenAsArray.map((child, index) => {
+          return (
+            <div className="form-cell" key={index}>
+              {child}
+            </div>
+          )
+        })
+      ) : (
+        <div className="form-cell">{childrenAsOne}</div>
+      )}
     </form>
   )
 }

@@ -1,4 +1,6 @@
 import './Button.scss'
+import Touchable from '../../Touchable/Touchable'
+import classNames from 'classnames'
 
 export default function Button(props) {
   const {
@@ -6,16 +8,32 @@ export default function Button(props) {
     color = 'var(--color-white_half)',
     dark = false,
     onClick,
+    size = 'md',
   } = props
+
   const styles = {
     backgroundColor: color,
     color: dark ? 'var(--color-light)' : 'var(--color-text)',
   }
+
+  const btnClass = classNames('button', {
+    md: size === 'md',
+    lg: size === 'lg',
+  })
+
   return (
     <div className="button-wrapper">
-      <button className="button" style={styles} onClick={onClick}>
-        {children && children}
-      </button>
+      <Touchable>
+        <div
+          role="button"
+          className={btnClass}
+          style={styles}
+          onClick={onClick}
+          {...props}
+        >
+          {children && children}
+        </div>
+      </Touchable>
     </div>
   )
 }

@@ -13,7 +13,7 @@ const Header = (props) => {
     } else {
       setIsDisplayedBackButton(true)
     }
-  })
+  }, [location.pathname])
 
   return (
     <div className="header">

@@ -1,15 +1,11 @@
-import React from 'react';
-import {
-  Switch,
-  Route,
-} from "react-router-dom";
+import React from 'react'
+import { Switch, Route } from 'react-router-dom'
 
-import List from "./List/List";
-import OneTask from "./OneTask/OneTask";
-import AddTask from "./AddTask/AddTask";
+import List from './List/List'
+import OneTask from './OneTask/OneTask'
+import AddTask from './AddTask/AddTask'
 
-export default function () {
-
+export default function Main() {
   return (
     <div className="main">
       <Switch>

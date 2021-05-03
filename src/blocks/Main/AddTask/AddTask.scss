@@ -1,3 +1,26 @@
 .add-task__title {
   font-weight: 600;
 }
+
+.form-datetime {
+  display: flex;
+  .from-date {
+    flex: 1;
+    margin-right: 4px;
+  }
+  .from-time {
+    flex: 1;
+    display: flex;
+    .from-time__cell {
+      flex: 1;
+      margin-right: 4px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.form-footer {
+  margin-top: 8px;
+}
