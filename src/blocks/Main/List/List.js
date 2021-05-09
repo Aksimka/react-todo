@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 
 import './List.scss'
@@ -7,7 +7,7 @@ import Task from '../../../components/cards/Task/Task'
 
 import { useStore } from '@mozaikjs/react'
 
-export default function List(props) {
+export default function List() {
   const store = useStore()
 
   const deleteTodoItem = (id, e) => {
@@ -15,18 +15,7 @@ export default function List(props) {
     store.todo.deleteTodoItem(store.todo.todoList.findIndex((i) => i.id === id))
   }
 
-  const addTestTask = () => {
-    store.todo.addTodoItem({
-      id: store.todo.todoList.length + 1,
-      title: 'taskTitle',
-      date: 'date',
-      fromTime: 'fromTime',
-      toTime: 'toTime',
-      description: 'description',
-    })
-  }
-
-  const taskList = store.todo.filteredTodoList.map((task, index) => (
+  const taskList = store.todo.filteredTodoList.map((task) => (
     <div className="main-task-wrapper" key={task.id}>
       <Link to={`/task/${task.id}`}>
         <Task
@@ -47,7 +36,6 @@ export default function List(props) {
         <Link to="/add">
           <AddTask />
         </Link>
-        <button onClick={addTestTask}>qwe</button>
       </div>
       <div className="main-tasks-list">{taskList}</div>
     </div>
