@@ -5,7 +5,6 @@ export default function Textarea(props) {
   const { nativeEvent } = props
 
   const handleChange = (e) => {
-    console.log(e, 'e')
     if (nativeEvent) {
       return props.onChange(e)
     } else {

@@ -3,9 +3,15 @@ const light = {
     today: '#489696',
     today_secondary: '#E0F4F4',
     today_text: '#A3C2C2',
-    tomorrow: '#FF493A',
-    tomorrow_secondary: '#FFF3F1',
-    tomorrow_text: '#AB8685',
+    tomorrow: '#ffd43a',
+    tomorrow_secondary: '#fffcf1',
+    tomorrow_text: '#aba385',
+    latest: '#3a65ff',
+    latest_secondary: '#f1f5ff',
+    latest_text: '#858fab',
+    yesterday: '#FF493A',
+    yesterday_secondary: '#FFF3F1',
+    yesterday_text: '#AB8685',
     older: '#50467E',
     older_secondary: '#F6F5FB',
     older_text: '#7C759F',
@@ -25,7 +31,7 @@ const light = {
     white: '#ffffff',
     black_half: '#7F7F7F',
     white_half: '#afb3b6',
-  }
-};
+  },
+}
 
-export default light;
+export default light

@@ -18,16 +18,24 @@ export default function Task(props) {
   }, [])
 
   const _computeDateToShow = (payloadDate) => {
-    const nowDate = dayjs(new Date()).format('YYYY-MM-DD')
-    const parsedPayloadDate = dayjs(payloadDate).format('YYYY-MM-DD')
-    const timeing =
-      dayjs(nowDate).valueOf() - dayjs(parsedPayloadDate).valueOf()
-    if (timeing === 0) {
+    const nowDate = dayjs(dayjs(new Date()).format('YYYY-MM-DD'))
+    const parsedPayloadDate = dayjs(payloadDate)
+    const diff = parsedPayloadDate.diff(nowDate)
+
+    if (diff === 0) {
       return 'today'
-    } else if (timeing <= DAY_MILLISECONDS) {
-      return 'tomorrow'
-    } else {
-      return 'older'
+    } else if (diff > 0) {
+      if (diff <= DAY_MILLISECONDS) {
+        return 'tomorrow'
+      } else {
+        return 'latest'
+      }
+    } else if (diff < 0) {
+      if (Math.abs(diff) <= DAY_MILLISECONDS) {
+        return 'yesterday'
+      } else {
+        return 'older'
+      }
     }
   }
 
@@ -59,7 +67,7 @@ export default function Task(props) {
                   <IconTrash
                     size={24}
                     weight={3}
-                    color="var(--color-older_text)"
+                    color={`var(--color-${textDay}_text)`}
                   />
                 }
               />

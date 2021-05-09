@@ -1,15 +1,16 @@
-import { createRef, forwardRef, useRef, useState } from 'react'
+import { useState } from 'react'
+import { withRouter } from 'react-router-dom'
+import { useStore } from '@mozaikjs/react'
 import './AddTask.scss'
 
 import Form from '../../../components/forms/Form/Form'
-import { useStore } from '@mozaikjs/react'
 import UiInput from '../../../components/forms/UiInput/UiInput'
 import Title from '../../../components/Typography/Title/Title'
 import Div from '../../../components/Div/Div'
 import UiTextarea from '../../../components/forms/UiTextarea/UiTextarea'
 import Button from '../../../components/buttons/Button/Button'
 
-export default function AddTask() {
+const AddTask = (props) => {
   const [taskTitle, setTaskTitle] = useState('')
   const [date, setDate] = useState('')
   const [fromTime, setFromTime] = useState('')
@@ -19,9 +20,6 @@ export default function AddTask() {
   const { todo } = useStore()
 
   const addNewTask = () => {
-    console.log('add begin')
-    console.log(todo, 'store')
-    console.log(date, fromTime, toTime, 'fromDate')
     const newItem = {
       id: todo.todoList.length + 1,
       title: taskTitle,
@@ -31,6 +29,7 @@ export default function AddTask() {
       description: description,
     }
     todo.addTodoItem(newItem)
+    props.history.push('/')
   }
 
   return (
@@ -39,7 +38,7 @@ export default function AddTask() {
         Add new task:{' '}
       </Title>
       <Div>
-        <Form onSubmit={(e) => addNewTask(e)} id="addtask">
+        <Form onSubmit={(e) => addNewTask(e)}>
           <UiInput
             type="text"
             value={taskTitle}
@@ -90,3 +89,5 @@ export default function AddTask() {
     </div>
   )
 }
+
+export default withRouter(AddTask)
