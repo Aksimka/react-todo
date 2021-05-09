@@ -24,7 +24,7 @@ export default function Button(props) {
   return (
     <div className="button-wrapper">
       <Touchable>
-        <div
+        <button
           role="button"
           className={btnClass}
           style={styles}
@@ -32,7 +32,7 @@ export default function Button(props) {
           {...props}
         >
           {children && children}
-        </div>
+        </button>
       </Touchable>
     </div>
   )

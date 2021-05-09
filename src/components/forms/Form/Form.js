@@ -3,6 +3,7 @@ import './Form.scss'
 
 export default function Form(props) {
   const handleSubmit = (e) => {
+    e.preventDefault()
     onSubmit(e)
   }
 
@@ -12,7 +13,7 @@ export default function Form(props) {
   const childrenAsOne = !children.length && children
 
   return (
-    <form className="form" onSubmit={(e) => handleSubmit(e)}>
+    <form className="form" onSubmit={handleSubmit}>
       {childrenAsArray ? (
         childrenAsArray.map((child, index) => {
           return (

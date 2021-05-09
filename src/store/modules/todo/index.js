@@ -5,16 +5,18 @@ export const initialTodoModel = {
     {
       id: 1,
       title: 'Design Meeting',
-      date: '2021-03-04T19:44:22.107Z',
-      time: '10:00 - 11:30',
+      date: '2021-03-04',
+      fromTime: '10:00',
+      toTime: '11:30',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aut deserunt exercitationem placeat tempora ut.',
     },
     {
       id: 2,
       title: 'Design Meeting',
-      date: '2021-03-12T19:44:22.107Z',
-      time: '10:00 - 11:30',
+      date: '2021-03-12',
+      fromTime: '10:00',
+      toTime: '11:30',
       description:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aut deserunt exercitationem placeat tempora ut.description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aut deserunt exercitationem placeat tempora ut.'",
     },
@@ -25,7 +27,8 @@ const todoListItemModel = types.model({
   id: types.number,
   title: types.string,
   date: types.string,
-  time: types.string,
+  fromTime: types.string,
+  toTime: types.string,
   description: types.string,
 })
 

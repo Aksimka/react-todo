@@ -11,37 +11,27 @@ import Button from '../../../components/buttons/Button/Button'
 
 export default function AddTask() {
   const [taskTitle, setTaskTitle] = useState('')
-  const [fromDate, setFromDate] = useState('')
+  const [date, setDate] = useState('')
   const [fromTime, setFromTime] = useState('')
   const [toTime, setToTime] = useState('')
   const [description, setDescription] = useState('')
 
-  const store = useStore()
+  const { todo } = useStore()
 
-  const addNewTask = (e) => {
+  const addNewTask = () => {
+    console.log('add begin')
+    console.log(todo, 'store')
+    console.log(date, fromTime, toTime, 'fromDate')
     const newItem = {
-      id: store.todoList.length + 1,
-      title: 'Design Meeting 3',
-      date: new Date(),
-      time: '10:00 - 11:30',
+      id: todo.todoList.length + 1,
+      title: taskTitle,
+      date: date,
+      fromTime: fromTime,
+      toTime: toTime,
+      description: description,
     }
-    store.addTodoItem(newItem)
+    todo.addTodoItem(newItem)
   }
-
-  const formRef = createRef()
-
-  const submitForm = () => {
-    console.log(formRef, 'formRef')
-  }
-
-  const FormWithRef = forwardRef((props, ref) => {
-    return (
-      <Form ref={ref} {...props}>
-        {' '}
-        {props.children}{' '}
-      </Form>
-    )
-  })
 
   return (
     <div className="add-task">
@@ -49,7 +39,7 @@ export default function AddTask() {
         Add new task:{' '}
       </Title>
       <Div>
-        <FormWithRef onSubmit={(e) => addNewTask(e)} ref={formRef}>
+        <Form onSubmit={(e) => addNewTask(e)} id="addtask">
           <UiInput
             type="text"
             value={taskTitle}
@@ -60,8 +50,8 @@ export default function AddTask() {
             <div className="from-date">
               <UiInput
                 type="date"
-                value={fromDate}
-                onChange={(e) => setFromDate(e)}
+                value={date}
+                onChange={(e) => setDate(e)}
                 label="Date:"
               />
             </div>
@@ -91,15 +81,11 @@ export default function AddTask() {
           />
 
           <div className="form-footer">
-            <Button
-              color="var(--color-primary)"
-              dark="true"
-              onClick={submitForm}
-            >
+            <Button color="var(--color-primary)" dark="true" type="submit">
               Add
             </Button>
           </div>
-        </FormWithRef>
+        </Form>
       </Div>
     </div>
   )

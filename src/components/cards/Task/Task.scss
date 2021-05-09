@@ -8,9 +8,8 @@
       .task-card-top-heading__title {
         font-weight: bold;
       }
-      .task-card-top-heading__time {
+      .time {
         margin-top: 8px;
-        font-size: 13px;
       }
     }
     .task-card-top-day {
@@ -39,13 +38,18 @@
     }
   }
 }
+
+.time {
+  font-size: 13px;
+}
+
 .task-card.today {
   background: var(--color-today_secondary);
   .task-card-top-heading {
     .task-card-top-heading__title {
       color: var(--color-today);
     }
-    .task-card-top-heading__time {
+    .time {
       color: var(--color-today_text);
     }
   }
@@ -59,7 +63,7 @@
     .task-card-top-heading__title {
       color: var(--color-tomorrow);
     }
-    .task-card-top-heading__time {
+    .time {
       color: var(--color-tomorrow_text);
     }
   }
@@ -73,7 +77,7 @@
     .task-card-top-heading__title {
       color: var(--color-older);
     }
-    .task-card-top-heading__time {
+    .time {
       color: var(--color-older_text);
     }
   }

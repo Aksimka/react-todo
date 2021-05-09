@@ -21,7 +21,8 @@ export default function List(props) {
         <Task
           title={task.title}
           date={task.date}
-          time={task.time}
+          fromTime={task.fromTime}
+          toTime={task.toTime}
           description={task.description}
           buttonClick={(e) => deleteTodoItem(task.id, e)}
         />
