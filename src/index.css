@@ -19,3 +19,10 @@ code {
 a {
   text-decoration: none;
 }
+
+.small-text {
+  font-size: 13px;
+}
+.bold-text {
+  font-weight: bold;
+}

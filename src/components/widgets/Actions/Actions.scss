@@ -1,0 +1,10 @@
+.actions {
+  display: flex;
+  .action {
+    padding-right: 8px;
+    flex: 1;
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+}

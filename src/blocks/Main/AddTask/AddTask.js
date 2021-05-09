@@ -9,6 +9,7 @@ import Title from '../../../components/Typography/Title/Title'
 import Div from '../../../components/Div/Div'
 import UiTextarea from '../../../components/forms/UiTextarea/UiTextarea'
 import Button from '../../../components/buttons/Button/Button'
+import Actions from '../../../components/widgets/Actions/Actions'
 
 const AddTask = (props) => {
   const [taskTitle, setTaskTitle] = useState('')
@@ -79,11 +80,11 @@ const AddTask = (props) => {
             label="Description:"
           />
 
-          <div className="form-footer">
+          <Actions>
             <Button color="var(--color-primary)" dark="true" type="submit">
               Add
             </Button>
-          </div>
+          </Actions>
         </Form>
       </Div>
     </div>

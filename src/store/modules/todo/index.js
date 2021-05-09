@@ -66,9 +66,10 @@ export const todoModel = types
         todoList: [...state().todoList, item],
       })
     },
-    deleteTodoItem({ dispatch, state }, index) {
+    deleteTodoItem({ dispatch, state }, id) {
       let list = state().todoList
-      list.splice(index, 1)
+      const foundItem = list.findIndex((i) => i.id === id)
+      list.splice(foundItem, 1)
       dispatch({
         todoList: list,
       })

@@ -1,10 +1,10 @@
-import './Div.scss'
 import classNames from 'classnames'
 
-export default function Div(props) {
+export default function Block(props) {
+  console.log(props, 'props')
   const { className: customClass } = props
 
-  const classes = classNames('ui-div', customClass)
+  const classes = classNames('ui-block', customClass)
 
   return (
     <div {...props} className={classes}>

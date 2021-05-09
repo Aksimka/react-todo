@@ -12,7 +12,7 @@ export default function List() {
 
   const deleteTodoItem = (id, e) => {
     e.preventDefault()
-    store.todo.deleteTodoItem(store.todo.todoList.findIndex((i) => i.id === id))
+    store.todo.deleteTodoItem(id)
   }
 
   const taskList = store.todo.filteredTodoList.map((task) => (
