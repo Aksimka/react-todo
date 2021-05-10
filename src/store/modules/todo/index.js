@@ -2,26 +2,7 @@ import { types } from '@mozaikjs/core'
 import dayjs from 'dayjs'
 
 export const initialTodoModel = {
-  todoList: [
-    {
-      id: 1,
-      title: 'Design Meeting',
-      date: '2021-03-04',
-      fromTime: '10:00',
-      toTime: '11:30',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aut deserunt exercitationem placeat tempora ut.',
-    },
-    {
-      id: 2,
-      title: 'Design Meeting',
-      date: '2021-03-12',
-      fromTime: '10:00',
-      toTime: '11:30',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aut deserunt exercitationem placeat tempora ut.description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aut deserunt exercitationem placeat tempora ut.',
-    },
-  ],
+  todoList: JSON.parse(localStorage.getItem('todoList')) || [],
 }
 
 const todoListItemModel = types.model({
@@ -62,9 +43,11 @@ export const todoModel = types
   })
   .actions({
     addTodoItem({ dispatch, state }, item) {
+      const newTodo = [...state().todoList, item]
       dispatch({
-        todoList: [...state().todoList, item],
+        todoList: newTodo,
       })
+      localStorage.setItem('todoList', JSON.stringify(newTodo))
     },
     deleteTodoItem({ dispatch, state }, id) {
       let list = state().todoList
@@ -73,5 +56,6 @@ export const todoModel = types
       dispatch({
         todoList: list,
       })
+      localStorage.setItem('todoList', JSON.stringify(list))
     },
   })

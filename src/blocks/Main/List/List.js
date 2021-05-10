@@ -9,6 +9,7 @@ import { useStore } from '@mozaikjs/react'
 
 export default function List() {
   const store = useStore()
+  console.log(store, 'store')
 
   const deleteTodoItem = (id, e) => {
     e.preventDefault()
