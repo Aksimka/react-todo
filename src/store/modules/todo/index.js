@@ -21,13 +21,21 @@ export const todoModel = types
   .computed({
     filteredTodoList({ state }) {
       const list = state().todoList
-      const nowDateDayjs = dayjs(dayjs(new Date()).format('YYYY-MM-DD'))
+      const nowDateDayjs = dayjs(dayjs(new Date()).format())
       const gteDiff = list.filter((i) => dayjs(i.date).diff(nowDateDayjs) >= 0)
       const ltDiff = list.filter((i) => dayjs(i.date).diff(nowDateDayjs) < 0)
-
       const gteDiffSorted = gteDiff.sort((a, b) => {
-        return dayjs(b.date).diff(nowDateDayjs) >
-          dayjs(a.date).diff(nowDateDayjs)
+        const aTime = (a.fromTime || []).split(':')
+        const bTime = (b.fromTime || []).split(':')
+        let fullADate = null
+        let fullBDate = null
+        aTime.length === 2 &&
+          (fullADate = dayjs(a.date).hour(aTime[0]).minute(aTime[1]))
+        bTime.length === 2 &&
+          (fullBDate = dayjs(b.date).hour(bTime[0]).minute(bTime[1]))
+        console.log(aTime, 'aTime')
+        return dayjs(dayjs(fullBDate).format()).diff(nowDateDayjs) >
+          dayjs(fullADate).diff(nowDateDayjs)
           ? -1
           : 1
       })
