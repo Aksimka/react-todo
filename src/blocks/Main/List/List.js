@@ -9,7 +9,6 @@ import { useStore } from '@mozaikjs/react'
 
 export default function List() {
   const store = useStore()
-  console.log(store, 'store')
 
   const deleteTodoItem = (id, e) => {
     e.preventDefault()
@@ -42,3 +41,7 @@ export default function List() {
     </div>
   )
 }
+
+
+// [{"id":4,"title":"Work","date":"2022-05-25","fromTime":"10:00","toTime":"19:00","description":""},{"id":3,"title":"Work on my own project","date":"2022-05-26","fromTime":"19:00","toTime":"22:00","description":"Usability research, think about new features"},{"id":2,"title":"Meet with Jane","date":"2022-05-26","fromTime":"12:30","toTime":"15:00","description":"Talk about Mike's birthday"},{"id":1,"title":"Going shop","date":"2022-05-26","fromTime":"10:00","toTime":"12:00","description":"Milk, bread, vegetables"}]
+// List.js:12 [{"id":4,"title":"Work","date":"2022-05-25","fromTime":"10:00","toTime":"19:00","description":""},{"id":3,"title":"Work on my own project","date":"2022-05-26","fromTime":"19:00","toTime":"22:00","description":"Usability research, think about new features"},{"id":2,"title":"Meet with Jane","date":"2022-05-26","fromTime":"12:30","toTime":"15:00","description":"Talk about Mike's birthday"},{"id":1,"title":"Going shop","date":"2022-05-26","fromTime":"10:00","toTime":"12:00","description":"Milk, bread, vegetables"}]

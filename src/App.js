@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 
 // import logo from './logo.svg';
 import './App.css'
@@ -6,17 +6,29 @@ import Header from './blocks/Header/Header.js'
 import Theme from './themes/Theme'
 import Main from './blocks/Main/Main'
 
-export default () => {
-  const body = document.querySelector('body')
-
+const App = () => {
+  const [width, setWidth] = useState(null)
   useEffect(() => {
+    const body = document.querySelector('body')
     new Theme({attachEl: body, themeName: 'defaultLight'})
+    setWidth(window.innerWidth)
+    window.addEventListener('resize', e => {
+      setWidth(e.target.innerWidth)
+    })
   }, [])
 
-  return (
-    <div className="App">
-      <Header/>
-      <Main/>
-    </div>
-  )
+  if (width <= 820) {
+    return (
+      <div className="App">
+        <Header/>
+        <Main/>
+      </div>
+    )
+  } else {
+    return (
+      <div>nope</div>
+    )
+  }
 }
+
+export default App

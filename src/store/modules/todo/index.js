@@ -22,9 +22,10 @@ export const todoModel = types
     filteredTodoList({ state }) {
       const list = state().todoList
       const nowDateDayjs = dayjs(dayjs(new Date()).format())
-      const gteDiff = list.filter((i) => dayjs(i.date).diff(nowDateDayjs) >= 0)
+      const gteDiff = list.filter((i) => dayjs(i.date).diff(nowDateDayjs) > 0)
       const ltDiff = list.filter((i) => dayjs(i.date).diff(nowDateDayjs) < 0)
       const gteDiffSorted = gteDiff.sort((a, b) => {
+        console.log(a, b);
         const aTime = (a.fromTime || []).split(':')
         const bTime = (b.fromTime || []).split(':')
         let fullADate = null
@@ -33,17 +34,17 @@ export const todoModel = types
           (fullADate = dayjs(a.date).hour(aTime[0]).minute(aTime[1]))
         bTime.length === 2 &&
           (fullBDate = dayjs(b.date).hour(bTime[0]).minute(bTime[1]))
-        console.log(aTime, 'aTime')
+        console.log(aTime, bTime, 'aTime')
         return dayjs(dayjs(fullBDate).format()).diff(nowDateDayjs) >
           dayjs(fullADate).diff(nowDateDayjs)
-          ? -1
-          : 1
+          ? 1
+          : -1
       })
       const ltDiffSorted = ltDiff.sort((a, b) => {
         return dayjs(a.date).diff(nowDateDayjs) >
           dayjs(b.date).diff(nowDateDayjs)
-          ? 1
-          : -1
+          ? -1
+          : 1
       })
 
       return [...gteDiffSorted, ...ltDiffSorted]
