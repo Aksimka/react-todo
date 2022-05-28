@@ -2,7 +2,7 @@
 
 ##### This is a my test project with React.
 
-![](./src/assets/images/mobile.png)
+![](./src/assets/images/mobile_small.png)
 
 #####  
 
