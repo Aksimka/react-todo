@@ -52,14 +52,13 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 150%;
-    height: 150%;
+    width: 650px;
+    height: 1300px;
     transform: translateX(0);
     opacity: 1;
 
     animation-name: show-image;
     animation-duration: 0.7s;
-    animation-delay: 0.5s;
     animation-iteration-count: 1;
   }
 }
