@@ -3,7 +3,7 @@ import './Header.scss'
 import IconChevronLeft from '@/components/icons/IconChevronLeft'
 import { useLocation, Link } from 'react-router-dom'
 
-const Header = (props) => {
+const Header = () => {
   const location = useLocation()
   const [isDisplayedBackButton, setIsDisplayedBackButton] = useState(false)
 
