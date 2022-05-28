@@ -1,4 +1,4 @@
-import mobileImage from '@/assets/images/mobile.png'
+import mobileImage from '@/assets/images/mobile_small.png'
 import './OnlyMobile.scss'
 
 const OnlyMobile = () => {
