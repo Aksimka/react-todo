@@ -2,8 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import './List.scss'
-import AddTask from '../../../components/cards/AddTask/AddTask'
-import Task from '../../../components/cards/Task/Task'
+import AddTask from '@/components/cards/AddTask/AddTask'
+import Task from '@/components/cards/Task/Task'
 
 import { useStore } from '@mozaikjs/react'
 

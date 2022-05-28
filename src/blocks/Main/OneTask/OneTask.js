@@ -1,14 +1,14 @@
 import { useParams, withRouter } from 'react-router-dom'
 import { useStore } from '@mozaikjs/react'
 import React, { useEffect, useState } from 'react'
-import Div from '../../../components/Div/Div'
-import Title from '../../../components/Typography/Title/Title'
+import Div from '@/components/Div/Div'
+import Title from '@/components/Typography/Title/Title'
 import dayjs from 'dayjs'
-import { computeDateToShow } from '../../../helpers/computeDateToShow'
-import TimeViewing from '../../../components/widgets/TimeViewing/TimeViewing'
+import { computeDateToShow } from '@/helpers/computeDateToShow'
+import TimeViewing from '@/components/widgets/TimeViewing/TimeViewing'
 import './OneTask.scss'
-import Actions from '../../../components/widgets/Actions/Actions'
-import Button from '../../../components/buttons/Button/Button'
+import Actions from '@/components/widgets/Actions/Actions'
+import Button from '@/components/buttons/Button/Button'
 
 const OneTask = (props) => {
   const params = useParams()

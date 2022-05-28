@@ -1,5 +1,5 @@
 import './Button.scss'
-import Touchable from '../../Touchable/Touchable'
+import Touchable from '@/components/Touchable/Touchable'
 import classNames from 'classnames'
 
 export default function Button(props) {

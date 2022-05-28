@@ -3,13 +3,13 @@ import { withRouter } from 'react-router-dom'
 import { useStore } from '@mozaikjs/react'
 import './AddTask.scss'
 
-import Form from '../../../components/forms/Form/Form'
-import UiInput from '../../../components/forms/UiInput/UiInput'
-import Title from '../../../components/Typography/Title/Title'
-import Div from '../../../components/Div/Div'
-import UiTextarea from '../../../components/forms/UiTextarea/UiTextarea'
-import Button from '../../../components/buttons/Button/Button'
-import Actions from '../../../components/widgets/Actions/Actions'
+import Form from '@/components/forms/Form/Form'
+import UiInput from '@/components/forms/UiInput/UiInput'
+import Title from '@/components/Typography/Title/Title'
+import Div from '@/components/Div/Div'
+import UiTextarea from '@/components/forms/UiTextarea/UiTextarea'
+import Button from '@/components/buttons/Button/Button'
+import Actions from '@/components/widgets/Actions/Actions'
 
 const AddTask = (props) => {
   const [taskTitle, setTaskTitle] = useState('')

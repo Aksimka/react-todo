@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import OnlyMobile from './blocks/OnlyMobile/OnlyMobile'
 
-// import logo from './logo.svg';
 import './App.css'
 import Header from './blocks/Header/Header.js'
 import Theme from './themes/Theme'

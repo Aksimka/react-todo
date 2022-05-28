@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 
 import './Task.scss'
-import Touchable from '../../Touchable/Touchable'
-import IconTrash from '../../icons/IconTrash'
-import IconWrapper from '../../icons/IconWrapper/IconWrapper'
-import { computeDateToShow } from '../../../helpers/computeDateToShow'
-import TimeViewing from '../../widgets/TimeViewing/TimeViewing'
+import Touchable from '@/components/Touchable/Touchable'
+import IconTrash from '@/components/icons/IconTrash'
+import IconWrapper from '@/components/icons/IconWrapper/IconWrapper'
+import { computeDateToShow } from '@/helpers/computeDateToShow'
+import TimeViewing from '@/components/widgets/TimeViewing/TimeViewing'
 
 export default function Task(props) {
   const { date, title, fromTime, toTime, description, buttonClick } = props

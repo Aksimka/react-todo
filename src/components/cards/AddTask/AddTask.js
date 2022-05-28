@@ -1,9 +1,9 @@
 import React from 'react'
 
-import IconButton from '../../buttons/IconButton/IconButton'
+import IconButton from '@/components/buttons/IconButton/IconButton'
 import './AddTask.scss'
-import IconPlus from '../../icons/IconPlus'
-import Touchable from '../../Touchable/Touchable'
+import IconPlus from '@/components/icons/IconPlus'
+import Touchable from '@/components/Touchable/Touchable'
 
 export default class AddTask extends React.Component {
   render() {

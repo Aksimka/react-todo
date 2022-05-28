@@ -1,6 +1,6 @@
-import { React, useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Header.scss'
-import IconChevronLeft from '../../components/icons/IconChevronLeft'
+import IconChevronLeft from '@/components/icons/IconChevronLeft'
 import { useLocation, Link } from 'react-router-dom'
 
 const Header = (props) => {
